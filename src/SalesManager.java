@@ -1,10 +1,9 @@
 public class SalesManager {
-    protected int[] sales;
+    protected Long[] sales;
 
-    public SalesManager(int[] sales) {
+    public SalesManager(Long[] sales) {
         this.sales = sales;
     }
-
     /* Методы использовались в предыдущих заданиях
         public int max() {
             int max = -1;
@@ -27,19 +26,19 @@ public class SalesManager {
     */
     public double average() {
         double average = 0;
-        for (int sale : sales) {
+        for (Long sale : sales) {
             average += sale;
         }
         //определение максимального значения
-        int max = -1;
-        for (int sale : sales) {
+        Long max = -1L;
+        for (Long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
         }
         //определение минимального
-        int min = 1000;
-        for (int sale : sales) {
+        Long min = 1000L;
+        for (Long sale : sales) {
             if (sale < min) {
                 min = sale;
             }
