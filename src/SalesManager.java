@@ -5,8 +5,7 @@ public class SalesManager {
         this.sales = sales;
     }
 
-    //Методы использовались в предыдущих заданиях
-
+    //определение максимального значения
     public long max() {
         long max = -1;
         for (long sale : sales) {
@@ -17,6 +16,7 @@ public class SalesManager {
         return max;
     }
 
+    //определение минимального
     public long min() {
         long min = 1000;
         for (long sale : sales) {
@@ -32,23 +32,9 @@ public class SalesManager {
         for (long sale : sales) {
             average += sale;
         }
-        //определение максимального значения
-        long max = -1L;
-        for (long sale : sales) {
-            if (sale > max) {
-                max = sale;
-            }
-        }
-        //определение минимального
-        long min = 1000L;
-        for (long sale : sales) {
-            if (sale < min) {
-                min = sale;
-            }
-        }
         //обрезание минимального и максимального значений
-        average -= min;
-        average -= max;
+        average -= this.min();
+        average -= this.max();
         average = average / (sales.length - 2);
         return average;
     }
